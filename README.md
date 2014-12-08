@@ -10,7 +10,7 @@ brew-stack
 Installs a formula and its dependencies from pre-made bottles (from official 
 Homebrew-* upstream taps) or as built bottles.
 
-Useful for:
+**Useful for:**
 
  * Creating a portable Homebrew directory for a specific OS version.
  
@@ -21,9 +21,13 @@ Useful for:
    as many Macs as possible for the given OS version (just like bottles do).
    
    *Example:* large CMake-built application, external to Homebrew, which links 
-   to libraries in a dependency 'stack' of Homebrew bottles, that is then 
-   bundled into a standalone .app using [CMake's BundleUtilities](http://www.cmake.org/cmake/help/v3.0/module/BundleUtilities.html).
-   
+   to libraries in a dependency 'stack' of Homebrew bottle-builds, that is then
+   bundled into a standalone .app using [CMake's BundleUtilities][butils].
+
+[butils]: http://www.cmake.org/cmake/help/v3.0/module/BundleUtilities.html
+
+**Example output:**
+
 ```
 $ brew stack -h
   Usage: brew stack [install-options...] formula [formula-options...]
