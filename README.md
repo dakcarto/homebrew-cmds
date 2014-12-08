@@ -35,34 +35,26 @@ $ brew stack -h
          Same options as for `brew install`, but only for a single formula.
          Note: --interactive install option is not supported
 
-$ brew stack tippecanoe
+$ brew stack cairo
+==> brew install cairo --only-dependencies
+==> Installing dependencies for cairo: libpng, pixman
+==> Installing cairo dependency: libpng
+==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/libpng-1.6.15.mavericks.bottle.
+Already downloaded: /Users/larrys/OSGeo4Mac/osgeo4mac-cache/libpng-1.6.15.mavericks.bottle.tar.gz
+==> Pouring libpng-1.6.15.mavericks.bottle.tar.gz
+    /usr/local/Cellar/libpng/1.6.15: 17 files, 1.3M
+==> Installing cairo dependency: pixman
+==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/pixman-0.32.6.mavericks.bottle.
 ######################################################################## 100.0%
-==> brew install tippecanoe --only-dependencies
-==> Installing dependencies for tippecanoe: protobuf, protobuf-c
-==> Installing tippecanoe dependency: protobuf
-==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/protobuf-2.6.1.mavericks.bottle
+==> Pouring pixman-0.32.6.mavericks.bottle.1.tar.gz
+    /usr/local/Cellar/pixman/0.32.6: 11 files, 1.4M
+==> Installed deps: libpng, pixman
+==> brew postinstall libpng
+==> brew postinstall pixman
+==> brew install cairo
+==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/cairo-1.14.0.mavericks.bottle.1
 ######################################################################## 100.0%
-==> Pouring protobuf-2.6.1.mavericks.bottle.1.tar.gz
-==> Caveats
-Editor support and examples have been installed to:
-  /usr/local/Cellar/protobuf/2.6.1/share/doc/protobuf
-==> Summary
-  /usr/local/Cellar/protobuf/2.6.1: 81 files, 7.1M
-==> Installing tippecanoe dependency: protobuf-c
-==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/protobuf-c-1.0.2.mavericks.bott
-######################################################################## 100.0%
-==> Pouring protobuf-c-1.0.2.mavericks.bottle.tar.gz
-  /usr/local/Cellar/protobuf-c/1.0.2: 10 files, 304K
-==> Installed deps: protobuf, protobuf-c
-==> brew postinstall protobuf
-==> brew postinstall protobuf-c
-==> brew install tippecanoe --build-bottle
-==> Downloading https://github.com/mapbox/tippecanoe/archive/v1.0.2.tar.gz
-######################################################################## 100.0%
-==> make
-==> make install PREFIX=/usr/local/Cellar/tippecanoe/1.0.2
-==> Not running post_install as we're building a bottle
-You can run it manually using `brew postinstall tippecanoe`
-  /usr/local/Cellar/tippecanoe/1.0.2: 4 files, 164K, built in 2 seconds
-==> brew postinstall tippecanoe
+==> Pouring cairo-1.14.0.mavericks.bottle.1.tar.gz
+    /usr/local/Cellar/cairo/1.14.0: 106 files, 6.4M
+==> brew postinstall cairo
 ```
