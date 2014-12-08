@@ -31,16 +31,34 @@ $ brew stack -h
          Same options as for `brew install`, but only for a single formula.
          Note: --interactive install option is not supported
 
-$ brew stack openssl
-==> brew install openssl --only-dependencies
-All dependencies for openssl are satisfied.
-==> brew install openssl
-==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/openssl-1.0.1j_1.mavericks.bottle
+$ brew stack tippecanoe
 ######################################################################## 100.0%
-==> Pouring openssl-1.0.1j_1.mavericks.bottle.tar.gz
+==> brew install tippecanoe --only-dependencies
+==> Installing dependencies for tippecanoe: protobuf, protobuf-c
+==> Installing tippecanoe dependency: protobuf
+==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/protobuf-2.6.1.mavericks.bottle
+######################################################################## 100.0%
+==> Pouring protobuf-2.6.1.mavericks.bottle.1.tar.gz
 ==> Caveats
-...
+Editor support and examples have been installed to:
+  /usr/local/Cellar/protobuf/2.6.1/share/doc/protobuf
 ==> Summary
-  /usr/local/Cellar/openssl/1.0.1j_1: 431 files, 15M
-==> brew postinstall openssl
+  /usr/local/Cellar/protobuf/2.6.1: 81 files, 7.1M
+==> Installing tippecanoe dependency: protobuf-c
+==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/protobuf-c-1.0.2.mavericks.bott
+######################################################################## 100.0%
+==> Pouring protobuf-c-1.0.2.mavericks.bottle.tar.gz
+  /usr/local/Cellar/protobuf-c/1.0.2: 10 files, 304K
+==> Installed deps: protobuf, protobuf-c
+==> brew postinstall protobuf
+==> brew postinstall protobuf-c
+==> brew install tippecanoe --build-bottle
+==> Downloading https://github.com/mapbox/tippecanoe/archive/v1.0.2.tar.gz
+######################################################################## 100.0%
+==> make
+==> make install PREFIX=/usr/local/Cellar/tippecanoe/1.0.2
+==> Not running post_install as we're building a bottle
+You can run it manually using `brew postinstall tippecanoe`
+  /usr/local/Cellar/tippecanoe/1.0.2: 4 files, 164K, built in 2 seconds
+==> brew postinstall tippecanoe
 ```
