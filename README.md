@@ -1,8 +1,10 @@
 Homebrew-Cmds
 ==============
 
-Some external commands for the Homebrew package installer on Mac that I find 
+Some external commands for the [Homebrew package manager][hb] on Mac that I find
 useful.
+
+[hb]: http://brew.sh/
 
 brew-stack
 ----------
