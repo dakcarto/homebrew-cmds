@@ -1,52 +1,35 @@
-# Install a formula and dependencies from pre-made bottles or as built bottles.
+# Lists all installed formulae and their options.
 #
-# Useful for creating a portable Homebrew directory for a specific OS version.
-# Example: portable domain-specific software stack in custom Homebrew prefix
+# Useful for recreating a Homebrew directory.
 
 require "formula"
 require "formula_installer"
+require "tab"
 require "utils"
 
 def usage; <<-EOS
-  Usage: brew stack [install-options...] formula [formula-options...]
+  Usage: brew list-options [formula]
 
-         Same options as for `brew install`, but only for a single formula.
-         Note: --interactive install option is not supported
+         Lists installed formula[e] and used options
   EOS
 end
 
-def system_out cmd, *args
-  # echo command
-  puts "#{Tty.blue}==>#{Tty.blue} #{cmd} #{args*' '}#{Tty.reset}" unless ARGV.verbose?
-  # sync output to tty
-  # stdout_prev, stderr_prev = $stdout.sync, $stderr.sync
-  # $stdout.sync, $stderr.sync = true, true
-  res = Homebrew.system cmd, *args
-  # $stdout.sync, $stderr.sync = stdout_prev, stderr_prev
-  res
-end
-
-if ARGV.formulae.length != 1 || ARGV.interactive?
-  puts usage
-  exit 1
-end
-
-if ARGV.include? "--help"
+if ARGV.include?("--help") || ARGV.include?("h")
   puts usage
   exit 0
 end
 
-f = ARGV.formulae[0]
-opts = ARGV.options_only
+kegs = ARGV.kegs
 
-# Check if already installed
-if f.installed?
-  ohai "#{f} already installed. Unlinking and upgrading"
-
+if kegs.length == 0
+  installed = %x[ls #{HOMEBREW_PREFIX+"opt"}]
+  installed.each do |k|
+    kegs << k
+  end
 end
 
-# Necessary to get dependencies to build as bottle if they install from source
-ENV["HOMEBREW_BUILD_BOTTLE"] = "1"
+exit 0
+
 
 # Install main formula's dependencies first
 pre_deps_list = %x[brew list].split("\n")
