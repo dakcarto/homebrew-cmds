@@ -12,7 +12,7 @@ if ARGV.formulae.length != 1
   exit 1
 end
 
-f = ARGV.formulae[0]
+f = ARGV.formulae.first
 
 if f.installed?
   %x(open #{f.prefix.parent})
@@ -21,4 +21,3 @@ else
 end
 
 exit 0
-

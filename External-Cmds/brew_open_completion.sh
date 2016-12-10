@@ -21,7 +21,7 @@ _brew_open ()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}"
     local prv=$(__brewcomp_prev)
-    __brew_complete_installed
+    __brew_complete_formulae
 }
 
 _brew_pre_open ()
@@ -33,8 +33,6 @@ _brew_pre_open ()
         local s="${COMP_WORDS[i]}"
         case "$s" in
         --*)
-            cmd="$s"
-            break
             ;;
         -*)
             ;;
