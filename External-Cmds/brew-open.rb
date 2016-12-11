@@ -13,11 +13,7 @@ if ARGV.formulae.length != 1
 end
 
 f = ARGV.formulae.first
-
-if f.installed?
-  %x(open #{f.prefix.parent})
-else
-  odie "#{f} not installed"
-end
+puts "Opening #{f.prefix.parent}"
+`open #{f.prefix.parent}`
 
 exit 0
