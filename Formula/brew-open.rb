@@ -9,7 +9,7 @@ class BrewOpen < Formula
   def install
     bin.install "External-Cmds/brew-open.rb"
     (bin/"brew-open.rb").chmod 0755
-    bash_completion.install "External-Cmds/brew_open_completion.sh"
+    bash_completion.install "External-Cmds/brew_open"
   end
 
   test do

@@ -9,7 +9,7 @@ class BrewStack < Formula
   def install
     bin.install "External-Cmds/brew-stack.rb"
     (bin/"brew-stack.rb").chmod 0755
-    bash_completion.install "External-Cmds/brew_stack_completion.sh"
+    bash_completion.install "External-Cmds/brew_stack"
   end
 
   test do
