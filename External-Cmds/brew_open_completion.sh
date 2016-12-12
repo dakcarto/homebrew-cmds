@@ -19,13 +19,6 @@
 
 _brew_open ()
 {
-    local cur="${COMP_WORDS[COMP_CWORD]}"
-    local prv=$(__brewcomp_prev)
-    __brew_complete_formulae
-}
-
-_brew_pre_open ()
-{
     local i=1 cmd
 
     # find the subcommand
@@ -46,9 +39,9 @@ _brew_pre_open ()
 
     # subcommands have their own completion functions
     case "$cmd" in
-    open)                       _brew_open;;
+    open)                       __brew_complete_formulae;;
     *)                          _brew;;
     esac
 }
 
-complete -o bashdefault -o default -F _brew_pre_open brew
+complete -o bashdefault -o default -F _brew_open brew
