@@ -1,5 +1,5 @@
 class BrewOpen < Formula
-  desc "External command to open the Cellar prefix of a formula"
+  desc "External command to open the opt_prefix folder of a formula"
   homepage "https://github.com/dakcarto/homebrew-cmds/"
   url "https://github.com/dakcarto/homebrew-cmds.git"
   version "1.0.0"
