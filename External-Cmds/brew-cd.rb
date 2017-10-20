@@ -12,9 +12,11 @@ if ARGV.formulae.length != 1
 end
 
 f = ARGV.formulae.first
-op = f.opt_prefix
+fpfx = f.prefix
 
-odie "No install at #{op}" if !op.directory? || op.children.empty?
+odie "No install at #{fpfx}" if !fpfx.directory? || fpfx.children.empty?
 
-`cd #{op}`
+`echo "cd #{fpfx}" | tr "\n" " " | pbcopy`
+puts "'cd #{fpfx}' on clipboard"
+
 exit 0
