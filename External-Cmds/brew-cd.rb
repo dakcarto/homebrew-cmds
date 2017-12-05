@@ -17,6 +17,6 @@ fpfx = f.prefix
 odie "No install at #{fpfx}" if !fpfx.directory? || fpfx.children.empty?
 
 `echo "cd #{fpfx}" | tr "\n" " " | pbcopy`
-puts "'cd #{fpfx}' on clipboard"
+puts "cd #{fpfx} on clipboard"
 
 exit 0
